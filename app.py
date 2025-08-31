@@ -17,7 +17,7 @@ from skimage.feature import local_binary_pattern, hog
 # -------------------------
 # Paths
 # -------------------------
-data_dir = "MS"
+data_dir = os.path.join(os.path.dirname(__file__), "MS")
 
 folders = {
     "Healthy": ["Control Axial_crop", "Control Saggital_crop"],
@@ -114,9 +114,12 @@ X = []
 y = []
 
 for label, subfolders in folders.items():
-    class_label = 0 if label=="Healthy" else 1
+    class_label = 0 if label == "Healthy" else 1
     for subfolder in subfolders:
         folder_path = os.path.join(data_dir, subfolder)
+        if not os.path.exists(folder_path):
+            st.error(f"Folder not found: {folder_path}")
+            continue
         for file in os.listdir(folder_path):
             if file.lower().endswith((".png", ".jpg", ".jpeg")):
                 img_path = os.path.join(folder_path, file)
