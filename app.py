@@ -17,7 +17,7 @@ from skimage.feature import local_binary_pattern, hog
 # -------------------------
 # Paths
 # -------------------------
-data_dir = "/Users/dani/Desktop/machine-learning-project-ml-team-3/MS"
+data_dir = "MS"
 
 folders = {
     "Healthy": ["Control Axial_crop", "Control Saggital_crop"],
@@ -340,7 +340,7 @@ with tab4:
         col1, col2, col3, col4 = st.columns(4)
 
         member_box_style = """
-        border:1px solid #D4BEE4; 
+        border:1px solid #4A6FA5; 
         border-radius:12px; 
         padding:20px; 
         margin:10px 0; 
@@ -356,7 +356,7 @@ with tab4:
         with col1:
             st.markdown(f"""
             <div style="{member_box_style}">
-              <h4 style="margin:0 0 8px 0; color:#674188">Sarah Alowjan</h4>
+              <h4 style="margin:0 0 8px 0; color:#4A6FA5">Sarah Alowjan</h4>
               <p style="margin:0">Software & AI Engineer</p>
             </div>
             """, unsafe_allow_html=True)
@@ -365,7 +365,7 @@ with tab4:
         with col2:
             st.markdown(f"""
             <div style="{member_box_style}">
-              <h4 style="margin:0 0 8px 0; color:#674188">Daniyah Almusa</h4>
+              <h4 style="margin:0 0 8px 0; color:#4A6FA5">Daniyah Almusa</h4>
               <p style="margin:0">AI Dev </p>
             </div>
             """, unsafe_allow_html=True)
@@ -374,7 +374,7 @@ with tab4:
         with col3:
             st.markdown(f"""
             <div style="{member_box_style}">
-              <h4 style="margin:0 0 8px 0; color:#674188">Mansor Alshamran</h4>
+              <h4 style="margin:0 0 8px 0; color:#4A6FA5">Mansor Alshamran</h4>
               <p style="margin:0">AI Engineer</p>
             </div>
             """, unsafe_allow_html=True)
@@ -383,7 +383,7 @@ with tab4:
         with col4:
             st.markdown(f"""
             <div style="{member_box_style}">
-              <h4 style="margin:0 0 8px 0; color:#674188">Rayid Alshammari</h4>
+              <h4 style="margin:0 0 8px 0; color:#4A6FA5">Rayid Alshammari</h4>
               <p style="margin:0">Data Scientist</p>
             </div>
             """, unsafe_allow_html=True)
