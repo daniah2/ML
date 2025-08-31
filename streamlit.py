@@ -150,7 +150,7 @@ with tab1:
     Early and accurate detection is crucial for effective treatment, but diagnosis can be challenging 
     and time-consuming even for experienced neurologists.</p>
     
-    <h3 style='color: #4A6FA5;'>Our Solution></h3>
+    <h3 style='color: #4A6FA5;'>Our Solution</h3>
     <p>We built a system that automatically analyzes brain MRI scans to distinguish between MS patients and healthy individuals.
     Our model assists doctors by making detection faster, more reliable, and consistent — providing a decision support tool rather than replacing medical expertise.
     </p>
