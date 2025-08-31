@@ -141,69 +141,51 @@ tab1, tab2, tab3, tab4 = st.tabs(["About", "EDA", "Prediction", "Team"])
 # TAB 1: About
 # -------------------------
 with tab1:
-    st.markdown('<p class="section-header"> MS Detection Overview</p>', unsafe_allow_html=True)
-
-    col1, col2, col3 = st.columns(3)
+    st.markdown('<p class="section-header">About the Project</p>', unsafe_allow_html=True)
     
-    # Problem
-    with col1:
-        st.markdown(f"""
-        <div class="metric-card">
-            <p class="metric-title">Problem</p>
-            <p class="metric-subtitle">
-            Multiple Sclerosis (MS) is a chronic neurological disease that damages the 
-            white matter in the brain and spinal cord.  
-            Diagnosing MS early is difficult and usually requires analyzing MRI scans, 
-            which is time-consuming for doctors and may lead to delayed treatment.  
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div style='background-color: white; padding: 20px; border-radius: 10px; border: 1px solid #4A6FA5;'>
+    <h3 style='color: #4A6FA5;'>Problem Statement</h3>
+    <p>Multiple Sclerosis (MS) is a chronic autoimmune disease that affects the central nervous system. 
+    Early and accurate detection is crucial for effective treatment, but diagnosis can be challenging 
+    and time-consuming even for experienced neurologists.</p>
+    
+    <h3 style='color: #4A6FA5;'>Our Solution></h3>
+    <p>We built a system that automatically analyzes brain MRI scans to distinguish between MS patients and healthy individuals.
+    Our model assists doctors by making detection faster, more reliable, and consistent — providing a decision support tool rather than replacing medical expertise.
+    </p>
 
-    # Solution 
-    with col2:
-        st.markdown(f"""
-        <div class="metric-card">
-            <p class="metric-title">Solution</p>
-            <p class="metric-subtitle">
-            We developed a system that uses MRI scans to automatically distinguish 
-            between MS patients and healthy individuals.  
-            This tool aims to support doctors and researchers by making the detection 
-            process faster, clearer, and more consistent.  
-            </p>
-        </div>
-        """, unsafe_allow_html=True)
+    
+    <h3 style='color: #4A6FA5;'>Dataset & Workflow</h3>
 
-    # Workflow
-    with col3:
-        st.markdown(f"""
-        <div class="metric-card">
-           <p class="metric-title">Our Dataset & Workflow</p>
-        <p class="metric-subtitle">
-        <b>Dataset:</b><br>
-        • Collected from a public MRI dataset for Multiple Sclerosis detection.<br>
-        • Contains brain MRI scans of both <b>healthy individuals</b> and <b>MS patients</b>.<br>
-        • Each scan was labeled (MS / Healthy) to be used in training the model.<br>
+    <h4>Dataset</h4>
+    <ul>
+        <li>Collected from a publicly available MRI dataset</li>
+        <li>Includes scans from both <b>healthy individuals</b> and <b>MS patients</b></li>
+        <li>Expert-labeled images (Healthy / MS) were used for supervised training</li>
+    </ul>
 
-        <br><b>Model:</b><br>
-        • We applied feature-extraction methods:<br>
-        &nbsp;&nbsp;- <b>LBP (Local Binary Pattern):</b> to capture texture patterns in MRI scans.<br>
-        &nbsp;&nbsp;- <b>HOG (Histogram of Oriented Gradients):</b> to capture shape and edge information.<br>
-        • Features were scaled and reduced in size using <b>PCA</b> for efficiency.<br>
-        • Final classification was performed with <b>Support Vector Machine (SVM)</b>, chosen after comparing different models for best accuracy and reliability.<br>
+    <h4>Feature Extraction & Model</h4>
+    <ul>
+        <li><b>LBP (Local Binary Pattern):</b> captured fine texture patterns</li>
+        <li><b>HOG (Histogram of Oriented Gradients):</b> captured shapes and edges</li>
+        <li>Features standardized and reduced using <b>PCA</b> for efficiency</li>
+        <li>Classification performed using <b>Support Vector Machine (SVM)</b>, chosen after testing multiple models</li>
+    </ul>
 
-      <br><b>Workflow (what we actually did):</b><br>
-        <ol style="margin-left:16px;">
-          <li>Load the labeled MRI dataset (Healthy vs MS; Axial & Sagittal).</li>
-          <li>Preprocess images (resize to 224×224, convert to grayscale).</li>
-          <li>Extract features: LBP + HOG, then concatenate.</li>
-          <li>Scale features and apply PCA for dimensionality reduction.</li>
-          <li><b>Split</b> data (train/test) with stratification (80/20).</li>
-          <li>Train a baseline SVM </b> on the training set and evaluate it (accuracy, report, ROC-AUC).</li>
-          <li><b>Hyperparameter tuning</b> using RandomizedSearchCV with <b>5-fold Cross-Validation</b>.</li>
-          <li>Retrain the <b>best SVM model</b> found by CV on the training data.</li>
-          <li>Evaluate the <b>optimized SVM</b> on the test set as the final chosen model.</li>
-        </ol>
-        </p>
+    <h4>Workflow (Step by Step)</h4>
+    <ol>
+        <li>Load and label MRI dataset (Healthy vs MS; Axial & Sagittal views)</li>
+        <li>Preprocess images (resize → 224×224, convert to grayscale)</li>
+        <li>Extract features using <b>LBP + HOG</b>, then combine</li>
+        <li>Apply scaling and <b>PCA</b> for dimensionality reduction</li>
+        <li>Split dataset (80% train / 20% test) with stratification</li>
+        <li>Train baseline <b>SVM model</b> and evaluate (accuracy, ROC-AUC, report)</li>
+        <li>Perform hyperparameter tuning with <b>RandomizedSearchCV + 20-fold Cross-Validation</b></li>
+        <li>Retrain the best SVM found by CV on training data</li>
+        <li>Evaluate optimized model on test set as the final performance</li>
+    </ol>
+
     </div>
     """, unsafe_allow_html=True)
 # -------------------------
@@ -384,7 +366,7 @@ with tab4:
             st.markdown(f"""
             <div style="{member_box_style}">
               <h4 style="margin:0 0 8px 0; color:#674188">Daniyah Almusa</h4>
-              <p style="margin:0"> اكتبي هنا الرول حقك</p>
+              <p style="margin:0">AI Dev </p>
             </div>
             """, unsafe_allow_html=True)
 
